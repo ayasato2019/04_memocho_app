@@ -74,15 +74,16 @@ body {
 
 
 /* 棒グラフ */
-/* canvas {
+canvas {
     width: 100%;
-} */
+}
 .mainview {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 64px; */
     margin: 64px auto;
 }
+/* 
 .bar-chart {
     font-size: .9em;
 }
@@ -152,7 +153,7 @@ body {
     margin-right: 10px;
     font-weight: 600;
 }
-
+ */
 /* switch */
 .switch {
     display: flex;
@@ -201,6 +202,14 @@ body {
 /* display area */
 .display-area {
     list-style: "";
+}
+
+.record-plus {
+    font-weight: 700;
+}
+
+.record-minus {
+    color: #762C61;
 }
 
 /* input area */

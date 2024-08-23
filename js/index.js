@@ -1,5 +1,5 @@
-import fadein from "./fade-in.js";
+import makeChart from "./makeChart.js";
 import recording from "./recording.js";
 
-fadein();
+makeChart();
 recording();
