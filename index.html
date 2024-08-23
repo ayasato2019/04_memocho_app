@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Limelight&family=Noto+Sans+JP&family=RocknRoll+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>シンプル家計簿</title>
+</head>
+<body>
+	<header class="header">
+		<div class="inner">
+			<h1>
+				<a href="./">シンプル家計簿</a>
+			</h1>
+		</div>
+	</header>
+
+	<main class="main">
+		<div class="inner">
+			<section class="mainview">
+				<h2 class="chart-title">月別推移</h2>
+				<div>
+					<dl class="bar-chart">
+						<div>
+							<dt>項目1</dt>
+							<dd style="width: 60%">60%</dd>
+						</div>
+						<div>
+							<dt>項目2</dt>
+							<dd style="width: 70%">70%</dd>
+						</div>
+						<div>
+							<dt>項目3</dt>
+							<dd style="width: 80%">80%</dd>
+						</div>
+					</dl>
+				</div>
+			
+				<h2 class="chart-title">実費割合</h2>
+				<div>
+					<div class="pie-chart">
+						<div></div>
+						<ol>
+							<li><span>項目1</span>70%</li>
+							<li><span>項目2</span>20%</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+
+			<div class="switch">
+				<label class="switch-item">
+					<input type="radio" name="switch" checked>
+					全て
+				</label>
+				<div>
+					<ul class="display-area">
+					</ul>
+				</div>
+			
+				<label class="switch-item">
+					<input type="radio" name="switch">
+					支出
+				</label>
+				<div>
+					<ul class="display-area">
+					</ul>
+				</div>
+			
+				<label class="switch-item">
+					<input type="radio" name="switch">
+					収入
+				</label>
+				<div>
+					<ul class="display-area">
+					</ul>
+				</div>
+			</div>
+
+			<div class="input-area">
+				<!-- <div class="w-full">
+					<label class="selectbox-type">
+						<select>
+							<option>収入</option>
+							<option>支出</option>
+						</select>
+					</label>
+				</div> -->
+				<p><input type="date" name="record-date" class="record-date" id="record-date"  placeholder="項目を入力"></p>
+				<p><input type="text" name="record-title" id="record-title" class="record-title"></p>
+				<p><input type="number" name="record-price" id="record-price" class="record-price" placeholder="1000円">&nbsp;円</p>
+
+				<div class="input-buttons">
+					<button id="record" class="input-button">登録</button>
+					<button id="clear" class="input-button">全削除</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<p class="inner">©2024 ayasato</p>
+	</footer>
+	<script type="module" src="./js/index.js"></script>
+</body>
+</html>
