@@ -17,37 +17,40 @@ export default function recording() {
         const title = recordTitle.value;
         const price = recordPrice.value;
         const type = recordType.value;
+		if (!date || !title || !price) {
+			alert("入力していない項目があります。");
+		} else {
+			const uniqueId = Date.now();  // 一意のIDを生成
+			const newItem = document.createElement('li');
+			const newItemType = document.createElement('li');
+			newItem.classList.add('record-item');
+			newItem.classList.add(`record-${uniqueId}`);
+			newItem.innerHTML = `${date}  ${title}  ${price}円 ${clearButtonHtml}`;
+			newItem.dataset.id = uniqueId;
 
-        const uniqueId = Date.now();  // 一意のIDを生成
-        const newItem = document.createElement('li');
-        const newItemType = document.createElement('li');
-        newItem.classList.add('record-item');
-        newItem.classList.add(`record-${uniqueId}`);
-        newItem.innerHTML = `${date}  ${title}  ${price}円 ${clearButtonHtml}`;
-        newItem.dataset.id = uniqueId;
+			const jpType = type === "plus" ? "収入" : "支出";
+			newItemType.classList.add('record-item');
+			newItemType.classList.add(`record-${uniqueId}`);
+			newItemType.innerHTML = `${jpType}  ${date}  ${title}  ${price}円 ${clearButtonHtml}`;
+			newItemType.dataset.id = uniqueId;
 
-        const jpType = type === "plus" ? "収入" : "支出";
-        newItemType.classList.add('record-item');
-        newItemType.classList.add(`record-${uniqueId}`);
-        newItemType.innerHTML = `${jpType}  ${date}  ${title}  ${price}円 ${clearButtonHtml}`;
-        newItemType.dataset.id = uniqueId;
+			if (type === "plus") {
+				recordListPlus.appendChild(newItem);
+				recordListALL.appendChild(newItemType);
+			} else {
+				recordListMinus.appendChild(newItem);
+				recordListALL.appendChild(newItemType);
+			}
 
-        if (type === "plus") {
-            recordListPlus.appendChild(newItem);
-            recordListALL.appendChild(newItemType);
-        } else {
-            recordListMinus.appendChild(newItem);
-            recordListALL.appendChild(newItemType);
-        }
+			// localStorageに追加
+			let records = JSON.parse(localStorage.getItem('records')) || {};
+			records[uniqueId] = { date, title, price, type };
+			localStorage.setItem('records', JSON.stringify(records));
 
-        // localStorageに追加
-        let records = JSON.parse(localStorage.getItem('records')) || {};
-        records[uniqueId] = { date, title, price, type };
-        localStorage.setItem('records', JSON.stringify(records));
-
-        recordDate.value = '';
-        recordTitle.value = '';
-        recordPrice.value = '';
+			recordDate.value = '';
+			recordTitle.value = '';
+			recordPrice.value = '';
+		}
     });
 
     // 削除
