@@ -53,8 +53,5 @@ export default function makeChart() {
             myPieChart.data.datasets[0].data = dataList; // 更新されたデータ
             myPieChart.update(); // チャートを再描画
         }
-
-        console.log(labels.length); // 追加された項目の数を確認
-        console.log(dataList.length);
     });
 }

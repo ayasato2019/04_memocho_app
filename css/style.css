@@ -204,6 +204,11 @@ canvas {
     list-style: "";
 }
 
+.display-area li {
+    display: flex;
+    flex-direction: row;
+}
+
 .record-plus {
     font-weight: 700;
 }
@@ -231,6 +236,18 @@ canvas {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 4px;
+    margin-left: auto;
+}
+
+.clear-button {
+    margin-left: 32px;
+    line-height: 1;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+.clear-button:hover {
+    opacity: .5;
 }
 
 .selectbox-type {
@@ -280,7 +297,7 @@ canvas {
     border: 1px solid #bcb2c9;
     border-radius: 5px;
     background-color: #fff;
-    color: #bcb2c9;
+    color: #412E3F;
     font-size: 16px;
     cursor: pointer;
 }
