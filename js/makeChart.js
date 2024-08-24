@@ -6,8 +6,8 @@ export default function makeChart() {
     const recordPrice = document.getElementById('record-price');
     const recordType = document.getElementById('record-type');
 
-    let labels = ["サンプル"]; // 初期状態のラベル
-    let dataList = ["100"]; // 初期状態のデータ
+    let labels = ["サンプルA","サンブルB","サンプルC"]; // 初期状態のラベル
+    let dataList = ["47","25","10"]; // 初期状態のデータ
 	let isFirstClick = true;
 
     // チャートの描画
