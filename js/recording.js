@@ -44,7 +44,6 @@ export default function recording() {
             recordDate.value = '';
             recordTitle.value = '';
             recordPrice.value = '';
-			recordType.value = 'plus';
     });
 
 	//削除
